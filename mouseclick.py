@@ -1,6 +1,6 @@
 from pynput import mouse
 
-click_count = 0  # Global counter
+click_count = 0
 
 def on_click(x, y, button, pressed):
     global click_count
@@ -11,6 +11,5 @@ def on_click(x, y, button, pressed):
             # Stop listener after 4 clicks
             return False
 
-# Start the mouse listener
 with mouse.Listener(on_click=on_click) as listener:
     listener.join()
